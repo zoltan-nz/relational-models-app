@@ -1,0 +1,31 @@
+
+<h1>Countries</h1>
+
+{{#each model as |country|}}
+  <pre>{{country.name}} ({{country.code}})</pre>
+  <ul>
+    {{#each country.users as |user|}}
+      <li>{{user.name}}</li>
+    {{/each}}
+  </ul>
+{{/each}}
+
+
+<h1>Users</h1>
+
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users as |user|}}
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.country.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
